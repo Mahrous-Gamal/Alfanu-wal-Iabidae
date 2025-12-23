@@ -1,0 +1,100 @@
+<header class="header  fixed w-full left-0 right-0 top-0 z-9999999 bg-white">
+  <div class="container flex justify-between items-center">
+    <!-- Logo -->
+    <div class="image w-35 mt-2 md:w-45 cursor-pointer " routerLink="/">
+      <img class="w-20" src="./assets/images/logo.svg" alt="logo">
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul class=" p-5 rounded-full hidden lg:flex justify-between items-center gap-4">
+      @for (section of sections; track $index) {
+      <li class="text-[#5D5A88] cursor-pointer relative group">
+        <a [routerLink]="section.url" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active"
+          class="text-[16px] leading-4 font-medium"
+          (click)="section.dropdown ? $event.preventDefault() : null">
+          {{ section.label }}
+        </a>
+
+        @if(section.dropdown){
+        <i class="fas fa-chevron-down"></i>
+        }
+
+        <!-- Dropdown Desktop -->
+        @if(section.dropdown){
+        <ul
+          class="absolute left-0 top-full w-fit bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-300 z-50">
+          @for (item of section.dropdown; track $index) {
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-[#5D5A88]">
+            <a [routerLink]="item.url" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active"
+              (click)="scrollToTop()" class="whitespace-nowrap">{{ item.label }}</a>
+          </li>
+          }
+        </ul>
+        }
+
+      </li>
+      }
+      <li class="text-[#5D5A88] cursor-pointer relative group">
+        <a routerLink="/contact" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active"
+          (click)="scrollToTop()"
+          class="font-medium bg-[#155469] text-white px-6 py-2.5 rounded-full">
+          Contact Us
+        </a>
+
+      </li>
+    </ul>
+
+    <!-- Bars Icon (Mobile) -->
+    <a class="bars text-[30px] font-bold block lg:hidden" (click)="toggleMenu()">
+      <i class="fas fa-bars cursor-pointer text-black"></i>
+    </a>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    class="fixed top-0 left-0 h-full w-fit bg-[#FFFFFF] shadow-lg z-99999999 transform transition-transform duration-300 ease-in-out lg:hidden"
+    [ngClass]="{
+      'translate-x-0 left-0': menuOpen,
+      '-translate-x-full left-0': !menuOpen
+    }">
+
+    <div class="p-4 text-right">
+      <i class="fas fa-times text-[24px] cursor-pointer" (click)="toggleMenu()"></i>
+    </div>
+
+    <ul class="flex flex-col gap-6 p-6">
+      @for (section of sections; track $index) {
+      <li class="text-[#5D5A88] cursor-pointer">
+        <div class="flex justify-between items-center"
+          (click)="section.dropdown ? toggleDropdown(section) : toggleMenu()">
+          <a [routerLink]="section.url" routerLinkActive="active" class="text-[16px] lg:text-[18px] font-bold">
+            {{ section.label }}
+          </a>
+          @if(section.dropdown){
+          <i class="fas fa-chevron-down"></i>
+          }
+        </div>
+
+        @if(section.dropdown && section.showDropdown){
+        <ul class="pl-4 mt-2 flex flex-col gap-2">
+          @for (item of section.dropdown; track $index) {
+          <li class="cursor-pointer text-[#5D5A88]">
+            <a [routerLink]="item.url" (click)="toggleMenu()">{{ item.label }}</a>
+          </li>
+          }
+        </ul>
+        }
+
+      </li>
+      }
+      <li class="text-[#5D5A88] cursor-pointer relative group">
+        <a routerLink="/contact" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active"
+          (click)="scrollToTop()"
+          class=" font-bold bg-[#0078C7] text-white px-5 py-2.5 rounded-full">
+          Contact Us
+        </a>
+
+      </li>
+    </ul>
+  </div>
+</header>
