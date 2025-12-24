@@ -1,28 +1,36 @@
 import { Component } from '@angular/core';
+import { HostListener } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+// import { TranslateServiceService } from './shared/services/translate-service.service';
+import { TranslateServiceService } from './../../shared/services/translate-service.service';
+import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
-
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule, ReactiveFormsModule],
+imports: [TranslateModule, CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
 })
 export class ContactComponent {
-  constructor(private fb: FormBuilder) {}
+  selectedLang = 'en';
 
-  // contactForm = this.fb.group({
-  //   firstName: ['', Validators.required],
-  //   lastName: ['', Validators.required],
-  //   phone: [''],
-  //   email: ['', [Validators.required, Validators.email]],
-  //   message: ['', Validators.required],
-  //   agree: [false, Validators.requiredTrue],
-  // });
+  constructor(readonly translaservice: TranslateServiceService) {
+    this.selectedLang = this.translaservice.getCurrentLanguage();
+  }
 
-  // submit() {
-  //   if (this.contactForm.valid) {
-  //     console.log(this.contactForm.value);
-  //   }
-  // }
+  switchLanguage(lang: string) {
+    console.log(lang);
+    this.selectedLang = lang;
+    this.translaservice.useLanguage(lang);
+  }
+
+  showScrollButton = false;
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.showScrollButton = window.pageYOffset > 200;
+  }
 }

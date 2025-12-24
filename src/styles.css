@@ -1,4 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+::selection {
+  background-color: #155469;
+  /* red-500 */
+  color: white;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #155469 rgba(0, 0, 0, .05);
+}

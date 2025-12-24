@@ -1,31 +1,64 @@
-<section class=" mx-auto px-4 sm:px-6 lg:px-10 py-10 lg:py-16">
+<button (click)="switchLanguage('ar')" class="lang-btn mt-7">
+  <i class="fa-solid fa-flag"></i>
+  AR
+</button>
+
+<button (click)="switchLanguage('en')" class="lang-btn">
+  <i class="fa-solid fa-flag-usa"></i>
+  EN
+</button>
+
+<section class=" mx-auto py-10 lg:py-16">
 
   <!-- Breadcrumb -->
-  <p class="text-xs sm:text-sm text-gray-400 mb-4">
+  <!-- <p class="text-xs sm:text-sm text-gray-400 mb-4">
     Home / Contact
-  </p>
+  </p> -->
 
   <!-- Header -->
   <div class="grid gap-8 lg:grid-cols-2 lg:gap-12 items-start">
     <div>
       <h1 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-semibold leading-tight mb-4">
-        Let’s Build Something <br class="hidden sm:block" />
-        Great Together
+        {{ 'BUILD_TOGETHER_TITLE' | translate }}
       </h1>
     </div>
 
-    <div class="text-sm sm:text-base text-gray-500 space-y-4">
-      <div class="flex gap-4 text-lg">
-        <i class="fa-brands fa-facebook text-2xl"></i>
-        <i class="fa-brands fa-linkedin text-2xl"></i>
-        <i class="fa-brands fa-instagram text-2xl"></i>
-        <i class="fa-brands fa-x-twitter text-2xl"></i>
-      </div>
+    <div class="text-sm sm:text-base text-gray-800 space-y-4">
+      <!-- Social Media Icons -->
+      <div class="flex mt-5 space-x-3">
+        <a href="https://www.facebook.com/share/1DhmXRHnzq/" target="_blank"
+          class="text-xl w-9 h-9 bg-gray-300 rounded-lg flex justify-center items-center hover:bg-[#155469] hover:text-white">
+          <i class="fab fa-facebook-f"></i>
+        </a>
 
+        <a href="https://www.instagram.com/alfanuwaliabidae" target="_blank"
+          class="text-xl w-9 h-9 bg-gray-300 rounded-lg flex justify-center items-center hover:bg-[#155469] hover:text-white">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+
+        <a href="https://www.tiktok.com/@user5690715086528?_r=1&_t=ZS-92UvNsKV74i" target="_blank"
+          class="text-xl w-9 h-9 bg-gray-300 rounded-lg flex justify-center items-center hover:bg-[#155469] hover:text-white">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <a href="https://t.me/+971501508885" target="_blank"
+          class="text-xl w-9 h-9 bg-gray-300 rounded-lg flex justify-center items-center hover:bg-[#155469] hover:text-white">
+          <i class="fa-brands fa-telegram"></i>
+        </a>
+
+        <a href="https://wa.me/971501508885" target="_blank"
+          class="text-xl w-9 h-9 bg-gray-300 rounded-lg flex justify-center items-center hover:bg-[#155469] hover:text-white">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <a href="mailto:alfanuwaliabidae@gmail.com" target="_blank"
+          class="text-xl w-9 h-9 bg-gray-300 rounded-lg flex justify-center items-center hover:bg-[#155469] hover:text-white">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
       <p>
-        Have a project in mind? Reach out to our team for a free
-        consultation, quote, or site assessment. We respond within 2
-        business hours.
+        {{ 'CONTACT_DESCRIPTION' | translate }}
       </p>
     </div>
   </div>
@@ -33,108 +66,139 @@
   <!-- Info Cards -->
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-10 lg:mt-12">
 
-    <div
-      class="card border border-[#E7E7E8] h-50 rounded-lg p-5 bg-[#F8F9FA] hover:bg-gray-200 transition-shadow duration-300 cursor-pointer">
+    <a href="mailto:alfanuwaliabidae@gmail.com" target="_blank"
+      class="card border text-center border-[#E7E7E8] h-50 rounded-lg p-5 bg-[#F8F9FA] hover:bg-gray-200 transition-shadow duration-300 cursor-pointer">
 
-      <div class="mt-10 w-10 h-10 flex items-center justify-center rounded-md border-red-300 bg-gray-300">
-        <i class="fa-regular fa-envelope text-2xl"></i>
+      <div class="mt-7 w-10 h-10 flex items-center justify-center rounded-md border-red-300 bg-gray-300 mx-auto">
+        <i class="fa-solid fa-envelope text-2xl text-[#155469]"></i>
       </div>
-      <h2 class="font-medium mt-5 text-xl">Email Us</h2>
+      <h2 class="font-medium mt-5 text-xl">
+        {{ 'EMAIL_US' | translate }}
+      </h2>
 
-      <p class="text-[#155469] mt-3">info&#64;alfanuwaliabidae.com</p>
+      <p class="text-[#155469] mt-2">alfanuwaliabidae&#64;gmail.com</p>
 
-    </div>
+    </a>
 
-    <div
-      class="card border border-[#E7E7E8] h-50 rounded-lg p-5 bg-[#F8F9FA] hover:bg-gray-200 transition-shadow duration-300 cursor-pointer">
+    <a href="tel:+971501508885"
+      class="card border text-center border-[#E7E7E8] h-50 rounded-lg p-5 bg-[#F8F9FA] hover:bg-gray-200 transition-shadow duration-300 cursor-pointer">
 
-      <div class="mt-10 w-10 h-10 flex items-center justify-center rounded-md border-red-300 bg-gray-300">
-        <i class="fa-regular fa-envelope text-2xl"></i>
+      <div class="mt-7 w-10 h-10 flex items-center justify-center rounded-md border-red-300 bg-gray-300 mx-auto">
+        <i class="fa-solid fa-mobile text-2xl text-[#155469]"></i>
       </div>
-      <h2 class="font-medium mt-5 text-xl">Call Us</h2>
+      <h2 class="font-medium mt-5 text-xl">
+        {{ 'CALL_US' | translate }}
+      </h2>
 
-      <p class="text-[#155469] mt-3">+971 50 150 8885</p>
+      <p class="text-[#155469] mt-2" dir="ltr">+971 50 150 8885
+      </p>
 
-    </div>
-    <div
-      class="card border border-[#E7E7E8] h-50 rounded-lg p-5 bg-[#F8F9FA] hover:bg-gray-200 transition-shadow duration-300 cursor-pointer">
+    </a>
 
-      <div class="mt-10 w-10 h-10 flex items-center justify-center rounded-md border-red-300 bg-gray-300">
-        <i class="fa-regular fa-envelope text-2xl"></i>
+    <a href="https://maps.app.goo.gl/bgphA7e29LhYLpVHA" target="_blank"
+      class="card border text-center border-[#E7E7E8] h-50 rounded-lg p-5 bg-[#F8F9FA] hover:bg-gray-200 transition-shadow duration-300 cursor-pointer">
+
+      <div class="mt-7 w-10 h-10 flex items-center justify-center rounded-md border-red-300 bg-gray-300 mx-auto">
+        <i class="fa-solid fa-location-dot text-2xl text-[#155469]"></i>
       </div>
-      <h2 class="font-medium mt-5 text-xl">Headquarter</h2>
+      <h2 class="font-medium mt-5 text-xl">
+        {{ 'LOCATION' | translate }}
+      </h2>
 
-      <p class="text-[#155469] mt-3">Alhambra 10th Floor, Florida, US</p>
+      <p class="text-[#155469] mt-2">
+        {{ 'COMPANY_LOCATION' | translate }}
+      </p>
 
-    </div>
-    <div
-      class="card border border-[#E7E7E8] h-50 rounded-lg p-5 bg-[#F8F9FA] hover:bg-gray-200 transition-shadow duration-300 cursor-pointer">
+    </a>
 
-      <div class="mt-10 w-10 h-10 flex items-center justify-center rounded-md border-red-300 bg-gray-300">
-        <i class="fa-regular fa-envelope text-2xl"></i>
+    <a href="https://maps.app.goo.gl/bgphA7e29LhYLpVHA" target="_blank"
+      class="card border text-center border-[#E7E7E8] h-50 rounded-lg p-5 bg-[#F8F9FA] hover:bg-gray-200 transition-shadow duration-300 cursor-pointer">
+
+      <div class="mt-7 w-10 h-10 flex items-center justify-center rounded-md border-red-300 bg-gray-300 mx-auto">
+        <i class="fa-solid fa-clock text-2xl text-[#155469]"></i>
       </div>
-      <h2 class="font-medium mt-5 text-xl">Working Hours</h2>
+      <h2 class="font-medium mt-5 text-xl">
+        {{ 'WORKING_HOURS' | translate }}
+      </h2>
 
-      <p class="text-[#155469] mt-3">10:00 am - 6:00 pm</p>
+      <p class="text-[#155469] mt-2">
+        {{ 'WORKING_TIME' | translate }}
+      </p>
 
-    </div>
+    </a>
+
   </div>
 
+
   <!-- Contact Form -->
-  <div class="bg-gray-50 rounded-3xl p-6 sm:p-8 lg:p-10 mt-12 lg:mt-16 grid gap-8 lg:grid-cols-2">
+  <div class="bg-gray-50 rounded-3xl py-5 px-4 sm:p-8 lg:p-10 mt-12 lg:mt-16 grid gap-8 lg:grid-cols-2">
     <!-- Image -->
     <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
       class="rounded-2xl object-cover w-full h-60 sm:h-80 lg:h-full" alt="Building" />
 
-    <div class="mx-auto p-6 bg-white shadow-md rounded-lg">
+    <div class="mx-auto p-6 px-4 bg-white shadow-md rounded-lg w-full">
       <form class="space-y-4">
+
         <!-- First Name and Last Name -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label for="firstName" class="block text-sm font-medium text-gray-700">First Name</label>
+            <label for="firstName" class="block text-sm font-medium text-gray-700">
+              {{ 'FIRST_NAME' | translate }}
+            </label>
             <input id="firstName" type="text"
               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#155469] bg-[#F8F9FA]"
-              placeholder="Enter your first name" required>
+              placeholder="{{ 'FIRST_NAME_PLACEHOLDER' | translate }}" required>
           </div>
+
           <div>
-            <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name</label>
+            <label for="lastName" class="block text-sm font-medium text-gray-700">
+              {{ 'LAST_NAME' | translate }}
+            </label>
             <input id="lastName" type="text"
               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#155469] bg-[#F8F9FA]"
-              placeholder="Enter your last name" required>
+              placeholder="{{ 'LAST_NAME_PLACEHOLDER' | translate }}" required>
           </div>
         </div>
 
         <!-- Phone and Email -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
-            <input id="phone" type="tel"
+            <label for="phone" class="block text-sm font-medium text-gray-700">
+              {{ 'PHONE' | translate }}
+            </label>
+            <input id="email" type="text"
               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#155469] bg-[#F8F9FA]"
-              placeholder="Enter Phone Number" required>
+              placeholder="{{ 'PHONE_PLACEHOLDER' | translate }}" required>
           </div>
+
           <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <label for="email" class="block text-sm font-medium text-gray-700">
+              {{ 'EMAIL' | translate }}
+            </label>
             <input id="email" type="email"
               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#155469] bg-[#F8F9FA]"
-              placeholder="Enter your Email" required>
+              placeholder="{{ 'EMAIL_PLACEHOLDER' | translate }}" required>
           </div>
         </div>
 
         <!-- Message -->
         <div>
-          <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+          <label for="message" class="block text-sm font-medium text-gray-700">
+            {{ 'MESSAGE' | translate }}
+          </label>
           <textarea id="message"
             class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#155469] bg-[#F8F9FA]"
-            rows="4" placeholder="Write your message" required></textarea>
+            rows="4" placeholder="{{ 'MESSAGE_PLACEHOLDER' | translate }}" required></textarea>
         </div>
 
-
         <button type="submit"
-          class="w-full mt-4 py-2 px-4 bg-[#155469] text-white font-semibold rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-[#155469]">
-          Send your Message
+          class="w-full mt-4 py-2 px-4 bg-[#155469] text-white font-semibold rounded-lg hover:bg-[#155469] focus:outline-none focus:ring-2 focus:ring-[#155469] cursor-pointer">
+          {{ 'SEND_MESSAGE' | translate }}
         </button>
+
       </form>
     </div>
+
 
   </div>
 </section>

@@ -1,29 +1,17 @@
 <app-header></app-header>
-<main class="pt-24 px-10">
+<main class="pt-24 px-5 md:px-10">
   <router-outlet></router-outlet>
 </main>
 <app-footer></app-footer>
 
 
-<!-- @if(showScrollButton){
+@if(showScrollButton){
   <button id="scrollToTopButton"
-    class=" animate-bounce fixed bottom-16 right-12 z-9999999999  bg-[#0078C7]  font-bold w-10 h-10 rounded-full"
+    class=" animate-bounce fixed bottom-12 right-12 z-9999999999  bg-[#155469]  font-bold w-10 h-10 rounded-full cursor-pointer"
     (click)="scrollToTop()">
     <i class="fas fa-arrow-up text-[#FFFFFF] "></i>
   </button>
 
-} -->
+}
 
-<!-- <h1 class="text-3xl font-bold underline text-red-600 text-center   ">
-  {{ 'Helo' | translate }} world!
-</h1> -->
 
-<!-- <button (click)="switchLanguage('ar')" class="lang-btn">
-  <i class="fa-solid fa-flag"></i>
-  AR
-</button>
-
-<button (click)="switchLanguage('en')" class="lang-btn">
-  <i class="fa-solid fa-flag-usa"></i>
-  EN
-</button> -->

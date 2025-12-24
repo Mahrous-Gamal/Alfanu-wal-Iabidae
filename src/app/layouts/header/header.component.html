@@ -1,5 +1,5 @@
-<header class="header  fixed w-full left-0 right-0 top-0 z-9999999 bg-white">
-  <div class="container flex justify-between items-center">
+<header class="header fixed w-full left-0 right-0 top-0 z-9999999 bg-white shadow ">
+  <div class="flex justify-between items-center">
     <!-- Logo -->
     <div class="image w-35 mt-2 md:w-45 cursor-pointer " routerLink="/">
       <img class="w-20" src="./assets/images/logo.svg" alt="logo">
@@ -8,11 +8,12 @@
     <!-- Desktop Menu -->
     <ul class=" p-5 rounded-full hidden lg:flex justify-between items-center gap-4">
       @for (section of sections; track $index) {
-      <li class="text-[#5D5A88] cursor-pointer relative group">
-        <a [routerLink]="section.url" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active"
-          class="text-[16px] leading-4 font-medium"
+      <li class="text-[#5D5A88] cursor-pointer relative group hover:text-[#155469]">
+        <a [routerLink]="section.url" [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="active text-[#155469] text-bold" class="text-[16px] leading-4 font-medium"
           (click)="section.dropdown ? $event.preventDefault() : null">
-          {{ section.label }}
+          {{ section.label | translate }}
+
         </a>
 
         @if(section.dropdown){
@@ -26,7 +27,8 @@
           @for (item of section.dropdown; track $index) {
           <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-[#5D5A88]">
             <a [routerLink]="item.url" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active"
-              (click)="scrollToTop()" class="whitespace-nowrap">{{ item.label }}</a>
+              (click)="scrollToTop()" class="whitespace-nowrap">{{ item.label | translate}}</a>
+
           </li>
           }
         </ul>
@@ -35,40 +37,46 @@
       </li>
       }
       <li class="text-[#5D5A88] cursor-pointer relative group">
-        <a routerLink="/contact" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active"
-          (click)="scrollToTop()"
-          class="font-medium bg-[#155469] text-white px-6 py-2.5 rounded-full">
-          Contact Us
-        </a>
 
+        <a routerLink="/contact" (click)="scrollToTop()" class="inline-flex items-center gap-2
+             font-medium
+               px-6 py-3 rounded-full
+               bg-[#0B3C4A] text-white border border-white  transition cursor-pointer">
+          {{ 'GET_STARTED' | translate }}
+          <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
       </li>
     </ul>
 
     <!-- Bars Icon (Mobile) -->
-    <a class="bars text-[30px] font-bold block lg:hidden" (click)="toggleMenu()">
-      <i class="fas fa-bars cursor-pointer text-black"></i>
+    <a class="bars text-[30px] font-bold block lg:hidden " (click)="toggleMenu()">
+      <i class="fas fa-bars cursor-pointer text-[#155469] me-2"></i>
     </a>
   </div>
 
   <!-- Mobile Menu -->
   <div
-    class="fixed top-0 left-0 h-full w-fit bg-[#FFFFFF] shadow-lg z-99999999 transform transition-transform duration-300 ease-in-out lg:hidden"
+    class="fixed top-0 left-0 h-full w-full bg-[#FFFFFF] shadow-lg z-99999999 transform transition-transform duration-300 ease-in-out lg:hidden"
     [ngClass]="{
       'translate-x-0 left-0': menuOpen,
       '-translate-x-full left-0': !menuOpen
     }">
 
     <div class="p-4 text-right">
-      <i class="fas fa-times text-[24px] cursor-pointer" (click)="toggleMenu()"></i>
+      <i class="fas fa-times text-[24px] cursor-pointer text-red-700" (click)="toggleMenu()"></i>
     </div>
 
     <ul class="flex flex-col gap-6 p-6">
       @for (section of sections; track $index) {
       <li class="text-[#5D5A88] cursor-pointer">
-        <div class="flex justify-between items-center"
+        <div class="flex justify-between items-center hover:text-[#155469]"
           (click)="section.dropdown ? toggleDropdown(section) : toggleMenu()">
-          <a [routerLink]="section.url" routerLinkActive="active" class="text-[16px] lg:text-[18px] font-bold">
-            {{ section.label }}
+          <a [routerLink]="section.url" routerLinkActive="active text-[#155469] text-bold"
+            class="text-[16px] lg:text-[18px] font-bold">
+            {{ section.label | translate }}
+
           </a>
           @if(section.dropdown){
           <i class="fas fa-chevron-down"></i>
@@ -87,14 +95,14 @@
 
       </li>
       }
-      <li class="text-[#5D5A88] cursor-pointer relative group">
+      <!-- <li class="text-[#5D5A88] cursor-pointer relative group">
         <a routerLink="/contact" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active"
           (click)="scrollToTop()"
-          class=" font-bold bg-[#0078C7] text-white px-5 py-2.5 rounded-full">
+          class=" font-bold bg-[#155469] text-white px-5 py-2.5 rounded-full">
           Contact Us
         </a>
 
-      </li>
+      </li> -->
     </ul>
   </div>
 </header>

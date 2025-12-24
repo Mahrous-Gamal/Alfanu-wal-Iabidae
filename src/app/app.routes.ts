@@ -10,13 +10,13 @@ export const routes: Routes = [
     path: 'home',
     loadComponent: () =>
       import('./pages/home/home.component').then((c) => c.HomeComponent),
-    title: 'Alfanu wal Iabidae | Home',
+    title: 'Al-Fann Wal-Ibda’a | Home',
   },
   {
     path: 'about',
     loadComponent: () =>
       import('./pages/about/about.component').then((c) => c.AboutComponent),
-    title: 'Alfanu wal Iabidae | About',
+    title: 'Al-Fann Wal-Ibda’a | About',
   },
   {
     path: 'services',
@@ -24,7 +24,7 @@ export const routes: Routes = [
       import('./pages/services/services.component').then(
         (c) => c.ServicesComponent
       ),
-    title: 'Alfanu wal Iabidae | Services',
+    title: 'Al-Fann Wal-Ibda’a | Services',
   },
   {
     path: 'contact',
@@ -32,6 +32,6 @@ export const routes: Routes = [
       import('./pages/contact/contact.component').then(
         (c) => c.ContactComponent
       ),
-    title: 'Alfanu wal Iabidae | Contact',
+    title: 'Al-Fann Wal-Ibda’a | Contact',
   },
 ];

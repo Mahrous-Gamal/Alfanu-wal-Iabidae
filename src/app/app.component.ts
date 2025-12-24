@@ -35,5 +35,4 @@ export class AppComponent {
     this.showScrollButton = window.pageYOffset > 200;
   }
 
-
 }

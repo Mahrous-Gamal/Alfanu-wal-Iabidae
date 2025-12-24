@@ -1,1 +1,364 @@
-<p>home works!</p>
+<button (click)="switchLanguage('ar')" class="lang-btn mt-10">
+  <i class="fa-solid fa-flag"></i>
+  AR
+</button>
+
+<button (click)="switchLanguage('en')" class="lang-btn">
+  <i class="fa-solid fa-flag-usa"></i>
+  EN
+</button>
+
+
+<section class="w-full mb-10">
+  <div
+    class="relative overflow-hidden rounded-2xl min-h-105 sm:min-h-115 lg:min-h-130 xl:min-h-145
+           flex items-center">
+
+    <!-- Background Image -->
+    <img
+      src="assets/images/home.jpg"
+      alt="Construction"
+      class="absolute inset-0 w-full h-full object-cover object-center"
+    />
+
+    <!-- Gradient Overlay -->
+    <!-- <div
+      class="absolute inset-0 bg-linear-to-r
+             from-[#0B3C4A]/90 via-[#0B3C4A]/70 to-transparent">
+    </div> -->
+<div
+  class="absolute inset-0
+         bg-linear-to-r
+         from-[#0B3C4A]/90 via-[#0B3C4A]/70 to-transparent
+         rtl:bg-linear-to-l">
+</div>
+
+    <!-- Content -->
+   <div
+  class="relative z-10 max-w-xl text-white
+         px-6 sm:px-10 lg:px-16">
+
+  <h1
+    class="font-semibold leading-tight hidden md:block
+           text-3xl sm:text-4xl lg:text-5xl ">
+    {{ 'HERO_COMPANY_NAME' | translate }}<br />
+    {{ 'HERO_COMPANY_TYPE' | translate }}<br />
+  </h1>
+
+  <p
+    class="mt-64 sm:mt-5 text-sm sm:text-base lg:text-lg text-white/90 max-w-md">
+    {{ 'HERO_DESCRIPTION' | translate }}
+  </p>
+
+  <a routerLink="/contact" (click)="scrollToTop()"
+    class="mt-6 sm:mt-8 inline-flex items-center gap-2
+           bg-white text-[#0B3C4A] font-medium
+           px-6 py-3 rounded-full
+           hover:bg-[#0B3C4A] hover:text-white border border-white transition cursor-pointer">
+    {{ 'GET_STARTED' | translate }}
+    <svg
+      class="w-4 h-4 rtl:rotate-180"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </a>
+
+</div>
+
+  </div>
+</section>
+<section class="py-12">
+  <div
+    class="bg-[#F8F9FA] rounded-2xl p-4 sm:p-10 lg:p-8">
+
+    <!-- Header -->
+    <div class="max-w-3xl mb-10">
+      <span class="text-xs font-semibold tracking-widest text-gray-500">
+        {{ 'ABOUT_US' | translate }}
+      </span>
+
+      <h2
+        class="mt-3 text-xl sm:text-4xl lg:text-4xl font-semibold text-gray-900 leading-tight">
+        {{ 'ABOUT_TITLE_LINE_1' | translate }}<br />
+        {{ 'ABOUT_TITLE_LINE_2' | translate }}
+      </h2>
+    </div>
+
+    <!-- Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+      <!-- Image Section -->
+      <div class="relative">
+        <img
+          src="assets/images/about.jpg"
+          alt="Modern House"
+          class="rounded-3xl  object-cover w-full"
+        />
+
+        <!-- Badge 1 -->
+        <div
+          class="absolute top-6 left-6 bg-white rounded-full px-4 py-2
+                 flex items-center gap-2 shadow">
+          <span
+            class="w-8 h-8 rounded-full bg-[#0B3C4A] text-white
+                   flex items-center justify-center text-sm">
+            <i class="fa-regular fa-user"></i>
+          </span>
+          <span class="text-sm font-medium">
+            {{ 'BADGE_MODERN_ENGINEERING' | translate }}
+          </span>
+        </div>
+
+        <!-- Badge 2 -->
+        <div
+          class="absolute top-1/2 -right-6 bg-white rounded-full px-4 py-2
+                 flex items-center gap-2 shadow">
+          <span
+            class="w-8 h-8 rounded-full bg-[#0B3C4A] text-white
+                   flex items-center justify-center text-sm">
+           <i class="fa-regular fa-building"></i>
+          </span>
+          <span class="text-sm font-medium">
+            {{ 'BADGE_DIVERSE_PROJECTS' | translate }}
+          </span>
+        </div>
+
+        <!-- Badge 3 -->
+        <div
+          class="absolute bottom-6 left-6 bg-white rounded-full px-4 py-2
+                 flex items-center gap-2 shadow">
+          <span
+            class="w-8 h-8 rounded-full bg-[#0B3C4A] text-white
+                   flex items-center justify-center text-sm">
+           <i class="fa-regular fa-thumbs-up"></i>
+          </span>
+          <span class="text-sm font-medium">
+            {{ 'BADGE_QUALITY_ASSURANCE' | translate }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Text Content -->
+      <div class="space-y-6">
+        <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+          {{ 'ABOUT_PARAGRAPH_1' | translate }}
+        </p>
+
+        <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+          {{ 'ABOUT_PARAGRAPH_2' | translate }}
+        </p>
+
+        <!-- Stats -->
+       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
+
+  <div class="bg-white rounded-2xl p-6 text-center shadow-sm">
+    <h3 class="text-4xl font-semibold text-gray-900">{{ 'NUMBER_65' | translate }}</h3>
+    <p class="text-sm text-gray-500 mt-2">
+      {{ 'STAT_PROJECTS' | translate }}
+    </p>
+  </div>
+
+  <div class="bg-white rounded-2xl p-6 text-center shadow-sm">
+    <h3 class="text-4xl font-semibold text-gray-900">{{ 'NUMBER_100' | translate }}</h3>
+    <p class="text-sm text-gray-500 mt-2">
+      {{ 'STAT_SATISFACTION' | translate }}
+    </p>
+  </div>
+
+  <div class="bg-white rounded-2xl p-6 text-center shadow-sm">
+    <h3 class="text-4xl font-semibold text-gray-900">{{ 'NUMBER_10' | translate }}</h3>
+    <p class="text-sm text-gray-500 mt-2">
+      {{ 'STAT_EXPERIENCE' | translate }}
+    </p>
+  </div>
+
+  <div class="bg-white rounded-2xl p-6 text-center shadow-sm">
+    <h3 class="text-4xl font-semibold text-gray-900">{{ 'NUMBER_24/7' | translate }}</h3>
+    <p class="text-sm text-gray-500 mt-2">
+      {{ 'STAT_AVAILABILITY' | translate }}
+    </p>
+  </div>
+
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="relative w-full overflow-hidden rounded-3xl">
+  <!-- Background Image -->
+  <img
+    src="assets/images/project.jpg"
+    alt="Modern house"
+    class="absolute inset-0 h-full w-full object-cover"
+  />
+
+<!-- Dark Overlay -->
+<div
+  class="absolute inset-0
+         bg-linear-to-r
+         from-[#000000]/99 via-[#000000]/70 to-transparent
+         rtl:bg-linear-to-l">
+</div>
+
+  <!-- Content -->
+  <div
+    class="relative z-10 flex min-h-105 flex-col justify-center px-6 py-12 sm:min-h-120 sm:px-10 md:min-h-130 md:px-16 lg:min-h-140 lg:px-20 xl:min-h-150 xl:px-24"
+  >
+    <div class="max-w-xl text-white">
+      <h1
+        class="text-2xl font-semibold leading-tight sm:text-2xl md:text-5xl"
+      >
+        {{ 'READY_TO_BUILD_LINE_1' | translate }}<br />
+        {{ 'READY_TO_BUILD_LINE_2' | translate }}
+      </h1>
+
+      <p
+        class="mt-4 text-sm leading-relaxed text-white/80 sm:text-base md:text-lg"
+      >
+        {{ 'READY_TO_BUILD_DESCRIPTION' | translate }}
+      </p>
+
+      <a routerLink="/contact" (click)="scrollToTop()"
+        class="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition sm:text-base cursor-pointer hover:bg-[#155469] hover:text-white border border-white"
+      >
+        {{ 'START_PROJECT_TODAY' | translate }}
+        <span class="text-lg"><svg
+          class="w-4 h-4 rtl:rotate-180"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="mx-auto mt-10 text center p-4 w-fit">
+    <h2 class="text-center text-[#155469] text-lg">
+      {{ 'OUR_PROJECTS_TITLE' | translate }}
+    </h2>
+    <p class="text-center text-gray-600 text-3xl">
+      {{ 'OUR_PROJECTS_SUBTITLE' | translate }}
+    </p>
+  </div>
+
+<div class="container mx-auto mt-12 mb-16">
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+      @for (project of projects; track $index) {
+
+        <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col projects-center justify-center">
+          <img [src]="project.image" [alt]="project.title" class="w-full h-48 object-cover rounded-t-lg">
+          <div class="flex justify-between w-full mt-4">
+          <div class="text-[#155469]">
+            <i class="fa-solid fa-location-dot"></i>  <span class="font-semibold text-md">{{ project.title | translate }}</span>
+          </div>
+          </div>
+          <p class="text-gray-500 mt-2">{{ project.location | translate }}</p>
+          <div class="mt-2 text-gray-700">
+            <span>{{ project.siteCrew | translate }}</span>
+          </div>
+        </div>
+      }
+
+    </div>
+  </div>
+
+  <div class="text-center">
+    <a
+      routerLink="/services"
+      (click)="scrollToTop()"
+      class="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition sm:text-base cursor-pointer bg-[#155469] text-white mx-auto"
+    >
+      {{ 'VIEW_ALL_PROJECTS' | translate }}
+      <svg
+        class="w-4 h-4 rtl:rotate-180"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+</section>
+
+<section class="w-full py-10">
+  <div class="mx-auto rounded-3xl bg-gray-50 p-6 sm:p-8 lg:p-10">
+    <div class="flex flex-col items-center gap-8 md:flex-row md:items-center">
+
+      <!-- Image Section -->
+      <div class="relative shrink-0">
+        <div
+          class="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl bg-[#0B3C4A]"
+        ></div>
+
+        <img
+          [src]="current().image"
+          [alt]="current().name"
+          class="relative z-10 h-64 w-56 rounded-2xl object-cover sm:h-72 sm:w-60 transition-all duration-300"
+        />
+      </div>
+
+      <!-- Text Content -->
+      <div class="flex-1 text-center md:text-start">
+        <div class="">
+          <h4 class="text-lg font-semibold text-gray-900">
+            {{ current().name | translate}}
+          </h4>
+          <p class="text-sm text-gray-500">
+            {{ current().title | translate }}
+          </p>
+        </div>
+
+        <p class="text-base leading-relaxed text-gray-700 sm:text-lg mt-3 md:mt-8">
+          {{ current().text | translate }}
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div class="flex items-center gap-3 md:self-end">
+        <button
+          (click)="prev()"
+          class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-600 shadow transition hover:bg-[#155469] hover:text-white cursor-pointer"
+        >
+   <svg
+        class="w-4 h-4 ltr:rotate-180"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+        </button>
+        <button
+          (click)="next()"
+          class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-600 shadow transition hover:bg-[#155469] hover:text-white cursor-pointer"
+        >
+
+
+       <svg
+        class="w-4 h-4 rtl:rotate-180"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
