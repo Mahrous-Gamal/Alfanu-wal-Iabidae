@@ -1,9 +1,9 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
 
 export function customTranslateLoader(http: HttpClient) {
   return {
     getTranslation: (lang: string) => {
-      return http.get(`/assets/i18n/${lang}.json`);
-    }
+      return http.get(`/i18n/${lang}.json`);
+    },
   };
 }
