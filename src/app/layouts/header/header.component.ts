@@ -11,6 +11,9 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
+
+
+
   menuOpen = false;
   activeSection = 'home';
 
