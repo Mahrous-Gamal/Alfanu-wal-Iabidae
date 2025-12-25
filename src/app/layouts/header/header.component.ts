@@ -11,9 +11,6 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-
-
-
   menuOpen = false;
   activeSection = 'home';
 
@@ -27,14 +24,14 @@ export class HeaderComponent {
     // { url: '/about', label: 'NAV_ABOUT' },
     { url: '/services', label: 'NAV_SERVICES' },
     { url: '/contact', label: 'NAV_CONTACT' },
-    {
-      label: 'NAV_LANGUAGE',
-      dropdown: [
-        { label: 'LANG_AR', url: '/accelon-note' },
-        { label: 'LANG_EN', url: '/accelon-code' },
-      ],
-      showDropdown: false,
-    },
+    // {
+    //   label: 'NAV_LANGUAGE',
+    //   dropdown: [
+    //     { label: 'LANG_AR', url: '/accelon-note' },
+    //     { label: 'LANG_EN', url: '/accelon-code' },
+    //   ],
+    //   showDropdown: false,
+    // },
   ];
 
   toggleMenu() {

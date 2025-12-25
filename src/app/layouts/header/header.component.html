@@ -11,16 +11,16 @@
       <li class="text-[#5D5A88] cursor-pointer relative group hover:text-[#155469]">
         <a [routerLink]="section.url" [routerLinkActiveOptions]="{ exact: true }"
           routerLinkActive="active text-[#155469] text-bold" class="text-[16px] leading-4 font-medium"
-          (click)="section.dropdown ? $event.preventDefault() : null">
+          >
           {{ section.label | translate }}
 
         </a>
 
-        @if(section.dropdown){
+        <!-- @if(section.dropdown){
         <i class="fas fa-chevron-down"></i>
-        }
+        } -->
 
-        <!-- Dropdown Desktop -->
+        <!-- Dropdown Desktop
         @if(section.dropdown){
         <ul
           class="absolute left-0 top-full w-fit bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-300 z-50">
@@ -32,7 +32,7 @@
           </li>
           }
         </ul>
-        }
+        } -->
 
       </li>
       }
@@ -72,26 +72,26 @@
       @for (section of sections; track $index) {
       <li class="text-[#5D5A88] cursor-pointer">
         <div class="flex justify-between items-center hover:text-[#155469]"
-          (click)="section.dropdown ? toggleDropdown(section) : toggleMenu()">
+          >
           <a [routerLink]="section.url" routerLinkActive="active text-[#155469] text-bold"
             class="text-[16px] lg:text-[18px] font-bold">
             {{ section.label | translate }}
 
           </a>
-          @if(section.dropdown){
+          <!-- @if(section.dropdown){
           <i class="fas fa-chevron-down"></i>
-          }
+          } -->
         </div>
 
-        @if(section.dropdown && section.showDropdown){
-        <ul class="pl-4 mt-2 flex flex-col gap-2">
+
+        <!-- <ul class="pl-4 mt-2 flex flex-col gap-2">
           @for (item of section.dropdown; track $index) {
           <li class="cursor-pointer text-[#5D5A88]">
             <a [routerLink]="item.url" (click)="toggleMenu()">{{ item.label }}</a>
           </li>
           }
-        </ul>
-        }
+        </ul> -->
+
 
       </li>
       }
