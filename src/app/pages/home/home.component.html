@@ -128,45 +128,99 @@
         <!-- Stats -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
-          <div class="bg-white rounded-2xl p-6 text-center shadow-sm py-10">
-            <h3 class="text-4xl font-semibold text-gray-900">{{ 'NUMBER_65' | translate }}</h3>
-            <p class="text-sm text-gray-500 mt-2">
+          <div class="group bg-white rounded-2xl p-6 text-center shadow-sm py-10
+         hover:bg-[#155469] transition-colors duration-300">
+
+            <h3 class="text-4xl font-semibold text-gray-900
+           group-hover:text-white">
+              {{ 'NUMBER_65' | translate }}
+            </h3>
+
+            <p class="text-sm text-gray-500 mt-2
+           group-hover:text-white">
               {{ 'STAT_PROJECTS' | translate }}
             </p>
+
           </div>
 
-          <div class="bg-white rounded-2xl p-6 text-center shadow-sm py-10">
-            <h3 class="text-4xl font-semibold text-gray-900">{{ 'NUMBER_100' | translate }}</h3>
-            <p class="text-sm text-gray-500 mt-2">
+
+          <div class="group bg-white rounded-2xl p-6 text-center shadow-sm py-10
+         hover:bg-[#155469] transition-all duration-300">
+
+            <h3 class="text-4xl font-semibold text-gray-900
+           group-hover:text-white">
+              {{ 'NUMBER_100' | translate }}
+            </h3>
+
+            <p class="text-sm text-gray-500 mt-2
+           group-hover:text-white">
               {{ 'STAT_SATISFACTION' | translate }}
             </p>
+
           </div>
 
-          <div class="bg-white rounded-2xl p-6 text-center shadow-sm py-10">
-            <h3 class="text-4xl font-semibold text-gray-900">{{ 'NUMBER_10' | translate }}</h3>
-            <p class="text-sm text-gray-500 mt-2">
+
+          <div class="group bg-white rounded-2xl p-6 text-center shadow-sm py-10
+         hover:bg-[#155469] transition-all duration-300 ease-in-out">
+
+            <h3 class="text-4xl font-semibold text-gray-900
+           group-hover:text-white">
+              {{ 'NUMBER_10' | translate }}
+            </h3>
+
+            <p class="text-sm text-gray-500 mt-2
+           group-hover:text-white">
               {{ 'STAT_EXPERIENCE' | translate }}
             </p>
+
           </div>
 
-          <div class="bg-white rounded-2xl p-6 text-center shadow-sm py-10">
-            <h3 class="text-4xl font-semibold text-gray-900">{{ 'NNUMBER_24/7' | translate }}</h3>
-            <p class="text-sm text-gray-500 mt-2">
+
+          <div class="group bg-white rounded-2xl p-6 text-center shadow-sm py-10
+         hover:bg-[#155469] transition-all duration-300 ease-in-out">
+
+            <h3 class="text-4xl font-semibold text-gray-900
+           group-hover:text-white">
+              {{ 'NNUMBER_24/7' | translate }}
+            </h3>
+
+            <p class="text-sm text-gray-500 mt-2
+           group-hover:text-white">
               {{ 'STAT_AVAILABILITY' | translate }}
             </p>
+
           </div>
-          <div class="bg-white rounded-2xl p-6 text-center shadow-sm py-10">
-            <h3 class="text-4xl font-semibold text-gray-900">{{ 'NUMBER_20' | translate }}</h3>
-            <p class="text-sm text-gray-500 mt-2">
+
+          <div class="group bg-white rounded-2xl p-6 text-center shadow-sm py-10
+         hover:bg-[#155469] transition-all duration-300 ease-in-out">
+
+            <h3 class="text-4xl font-semibold text-gray-900
+           group-hover:text-white">
+              {{ 'NUMBER_20' | translate }}
+            </h3>
+
+            <p class="text-sm text-gray-500 mt-2
+           group-hover:text-white">
               {{ 'STAT_COMPLETED_PROJECTS' | translate }}
             </p>
+
           </div>
-          <div class="bg-white rounded-2xl p-6 text-center shadow-sm py-10">
-            <h3 class="text-4xl font-semibold text-gray-900">{{ 'NUMBER_30' | translate }}</h3>
-            <p class="text-sm text-gray-500 mt-2">
+
+          <div class="group bg-white rounded-2xl p-6 text-center shadow-sm py-10
+         hover:bg-[#155469] transition-all duration-300 ease-in-out">
+
+            <h3 class="text-4xl font-semibold text-gray-900
+           group-hover:text-white">
+              {{ 'NUMBER_30' | translate }}
+            </h3>
+
+            <p class="text-sm text-gray-500 mt-2
+           group-hover:text-white">
               {{ 'STAT_SKILLED_TEAM' | translate }}
             </p>
+
           </div>
+
         </div>
 
       </div>
@@ -226,7 +280,8 @@
     <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
       @for (project of projects; track $index) {
 
-      <div class="bg-white border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,0.08)] rounded-lg p-6 flex flex-col projects-center justify-center">
+      <div
+        class="bg-white border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,0.08)] rounded-lg p-6 flex flex-col projects-center justify-center">
         <img [src]="project.image" [alt]="project.title" class="w-full h-48 object-cover rounded-t-lg">
         <div class="flex justify-between w-full mt-4">
           <div class="text-[#155469]">
