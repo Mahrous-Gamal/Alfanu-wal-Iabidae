@@ -22,15 +22,18 @@
   "ABOUT_PARAGRAPH_1": "نرحب بكم في شركة الفن والابداع، شريككم الموثوق به في حلول إنشاء المباني والصيانة والتجديد للمشاريع السكنية والتجارية. بخبرة تزيد عن 10 سنوات، نفخر بتقديم خدمات عالية الجودة تعزز الراحة والكفاءة والجمال في مشاريعكم.",
 
   "ABOUT_PARAGRAPH_2": "نحن نعمل على إرضاء عملائنا الكرام",
-  "NUMBER_65": "٦٥+",
-  "NUMBER_10": "١٠+",
+  "NUMBER_65": "+٦٥",
+  "NUMBER_10": "+١٠",
   "NUMBER_100": "١٠٠٪",
-  "NUMBER_24/7": "٧/٢٤",
-
+  "NUMBER_24_7": "٢٤/٧",
+  "NUMBER_20": "+٢٠",
+  "NUMBER_30": "+٣٠",
   "STAT_PROJECTS": "مشاريع تم تنفيذها بنجاح",
   "STAT_SATISFACTION": "نسبة رضا العملاء",
   "STAT_EXPERIENCE": "سنوات من الخبرة في المجال",
   "STAT_AVAILABILITY": "خدمة متوفرة على مدار الساعة",
+  "STAT_COMPLETED_PROJECTS": "مشاريع إنشاء مكتملة",
+  "STAT_SKILLED_TEAM": "مهندسون وفنيون محترفون",
 
   "READY_TO_BUILD_LINE_1": "هل انت مستعد للبناء",
   "READY_TO_BUILD_LINE_2": "شيء عظيم؟",
@@ -75,13 +78,13 @@
   "FOOTER_OUR_SERVICES": "خدماتنا",
   "FOOTER_CONTRACTING_SERVICES": "خدمات المقاولات الاحترافية",
   "FOOTER_MAINTENANCE_SUPPORT": "خدمات الصيانة والدعم الفني",
-"FOOTER_INTERIOR_FINISHING": "أعمال الترميم والتشطيبات الداخلية",
+  "FOOTER_INTERIOR_FINISHING": "أعمال الترميم والتشطيبات الداخلية",
   "FOOTER_BUILDING_RENOVATION": "خدمات إنشاء المباني وأعمال التجديد",
   "FOOTER_NEWS_UPDATES": "الأخبار والتحديثات",
   "FOOTER_NEWS_DESC": "أدخل بريدك الإلكتروني لتصلك النشرات الإخبارية المهمة.",
   "FOOTER_EMAIL_PLACEHOLDER": "أدخل بريدك الإلكتروني...",
   "FOOTER_SUBSCRIBE": "اشترك",
-  "FOOTER_COPYRIGHT": "© 2026 الفن والإبداع للمقاولات العامة. جميع الحقوق محفوظة",
+  "FOOTER_COPYRIGHT": "© 2026 الفن والإبداع للمقاولات . جميع الحقوق محفوظة",
   "FOOTER_DEVELOPED_BY": "تم التطوير بواسطة:",
   "DEVELOPER_NAME": "م. محروس جمال"
 }

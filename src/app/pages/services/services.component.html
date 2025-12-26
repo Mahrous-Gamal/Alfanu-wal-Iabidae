@@ -13,7 +13,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
       @for (project of projects; track $index) {
 
-        <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col projects-center justify-center">
+        <div class="bg-white rounded-lg border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,0.08)] p-6 flex flex-col projects-center justify-center">
           <img [src]="project.image" [alt]="project.title" class="w-full h-48 object-cover rounded-t-lg">
           <div class="flex justify-between w-full mt-4">
           <div class="text-[#155469]">
