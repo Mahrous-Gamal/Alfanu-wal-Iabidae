@@ -1,38 +1,21 @@
-<header class="header fixed w-full left-0 right-0 top-0 z-9999999 bg-white shadow px-5">
+<header class="header fixed w-full left-0 right-0 top-0 z-9999999 bg-white shadow pe-2 md:pe-5">
   <div class="flex justify-between items-center">
     <!-- Logo -->
 
     <div class="flex">
-      <div class="image mt-2  cursor-pointe " routerLink="/">
-        <img class="w-20" src="./assets/images/logo.svg" alt="logo">
+      <div class="image mt-2 cursor-pointer " routerLink="/">
+        <img class="w-20 h-12" src="./assets/images/logo.svg" alt="logo">
       </div>
       <!-- Desktop Menu -->
       <ul class=" p-5 rounded-full hidden lg:flex justify-between items-center gap-4">
         @for (section of sections; track $index) {
         <li class="text-[#5D5A88] cursor-pointer relative group hover:text-[#155469]">
           <a [routerLink]="section.url" [routerLinkActiveOptions]="{ exact: true }"
-            routerLinkActive="active text-[#155469] text-bold" (click)="scrollToTop()" class="text-[16px] leading-4 font-medium">
+            routerLinkActive="active text-[#155469] text-bold" (click)="scrollToTop()"
+            class="text-[16px] leading-4 font-medium">
             {{ section.label | translate }}
 
           </a>
-
-          <!-- @if(section.dropdown){
-        <i class="fas fa-chevron-down"></i>
-        } -->
-
-          <!-- Dropdown Desktop
-        @if(section.dropdown){
-        <ul
-          class="absolute left-0 top-full w-fit bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-300 z-50">
-          @for (item of section.dropdown; track $index) {
-          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-[#5D5A88]">
-            <a [routerLink]="item.url" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active"
-              (click)="scrollToTop()" class="whitespace-nowrap">{{ item.label | translate}}</a>
-
-          </li>
-          }
-        </ul>
-        } -->
 
         </li>
         }
@@ -41,36 +24,33 @@
 
     </div>
     <div class="flex gap-8 items-center">
-            <!-- Language -->
-    <div class="relative" (click)="toggleLanguageDropdown()" tabindex="0">
-      <!-- <i class="fas fa-globe text-gray-600 hover:text-blue-600 cursor-pointer text-xl"></i> -->
-      <i
-        class="fas fa-language text-gray-400  hover:text-gray-500 dark:hover:text-[#cfccff]  cursor-pointer text-sm"></i>
+      <!-- Language -->
+      <div class="relative" (click)="toggleLanguageDropdown()" tabindex="0">
+        <i class="fas fa-language text-gray-500  hover:text-gray-500 cursor-pointer text-sm "></i>
 
-      @if(langOpen){
-      <div
-        class="absolute right-0 mt-2 w-28 bg-white dark:bg-black border border-gray-200 dark:border-none rounded shadow z-50">
-        <button
-          class="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white text-sm cursor-pointer"
-          (click)="switchLang('en')">
-          <span class="fi fi-us w-5 h-5"></span> English
-        </button>
+        @if(langOpen){
+        <div
+          class="absolute right-0 mt-2 w-28 bg-white dark:bg-black border border-gray-200 dark:border-none rounded shadow z-50">
+          <button
+            class="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white text-sm cursor-pointer"
+            (click)="switchLang('en')">
+            <span class="fi fi-us w-5 h-5"></span> English
+          </button>
 
-        <button
-          class="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white text-sm cursor-pointer"
-          (click)="switchLang('ar')">
-          <span class="fi fi-sa w-5 h-5"></span> العربية
-        </button>
+          <button
+            class="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white text-sm cursor-pointer"
+            (click)="switchLang('ar')">
+            <span class="fi fi-sa w-5 h-5"></span> العربية
+          </button>
+        </div>
+        }
+
+
       </div>
-      }
-
-
-    </div>
-      <div class="text-[#5D5A88] cursor-pointer relative group">
-
+      <div class="text-[#5D5A88] cursor-pointer relative group hidden lg:block">
         <a routerLink="/contact" (click)="scrollToTop()" class="inline-flex items-center gap-2
              font-medium
-               px-6 py-3 rounded-full
+               px-5 py-2.5 rounded-full
                bg-[#0B3C4A] text-white border border-white  transition cursor-pointer">
           {{ 'GET_STARTED' | translate }}
           <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -81,8 +61,6 @@
 
 
     </div>
-
-
 
     <!-- Bars Icon (Mobile) -->
     <a class="bars text-[30px] font-bold block lg:hidden " (click)="toggleMenu()">
@@ -111,31 +89,10 @@
             {{ section.label | translate }}
 
           </a>
-          <!-- @if(section.dropdown){
-          <i class="fas fa-chevron-down"></i>
-          } -->
         </div>
-
-
-        <!-- <ul class="pl-4 mt-2 flex flex-col gap-2">
-          @for (item of section.dropdown; track $index) {
-          <li class="cursor-pointer text-[#5D5A88]">
-            <a [routerLink]="item.url" (click)="toggleMenu()">{{ item.label }}</a>
-          </li>
-          }
-        </ul> -->
-
 
       </li>
       }
-      <!-- <li class="text-[#5D5A88] cursor-pointer relative group">
-        <a routerLink="/contact" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active"
-          (click)="scrollToTop()"
-          class=" font-bold bg-[#155469] text-white px-5 py-2.5 rounded-full">
-          Contact Us
-        </a>
-
-      </li> -->
     </ul>
   </div>
 </header>
