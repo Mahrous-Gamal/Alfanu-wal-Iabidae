@@ -8,7 +8,6 @@
   EN
 </button>
 
-
 <section class="w-full">
   <div class="relative overflow-hidden rounded-2xl min-h-105 sm:min-h-115 lg:min-h-130 xl:min-h-145
            flex items-center">
@@ -45,7 +44,7 @@
       <a routerLink="/contact" (click)="scrollToTop()" class="mt-6 sm:mt-8 inline-flex items-center gap-2
            bg-white text-[#0B3C4A] font-medium
            px-4 py-2 md:px-6 md:py-3 rounded-full
-           hover:bg-[#0B3C4A] hover:text-white border border-white transition cursor-pointer">
+           hover:bg-[#0B3C4A] hover:text-white border border-white transition-all duration-300 ease-in-out cursor-pointer">
         {{ 'GET_STARTED' | translate }}
         <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
@@ -129,7 +128,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
           <div class="group bg-white rounded-2xl p-6 text-center shadow-sm py-10
-         hover:bg-[#155469] transition-colors duration-300">
+         hover:bg-[#155469] transition-all duration-300 ease-in-out-colors">
 
             <h3 class="text-4xl font-semibold text-gray-900
            group-hover:text-white">
@@ -145,7 +144,7 @@
 
 
           <div class="group bg-white rounded-2xl p-6 text-center shadow-sm py-10
-         hover:bg-[#155469] transition-all duration-300">
+         hover:bg-[#155469] transition-all ease-in-out-all duration-300">
 
             <h3 class="text-4xl font-semibold text-gray-900
            group-hover:text-white">
@@ -161,7 +160,7 @@
 
 
           <div class="group bg-white rounded-2xl p-6 text-center shadow-sm py-10
-         hover:bg-[#155469] transition-all duration-300 ease-in-out">
+         hover:bg-[#155469] transition-all ease-in-out-all duration-300 ease-in-out">
 
             <h3 class="text-4xl font-semibold text-gray-900
            group-hover:text-white">
@@ -177,7 +176,7 @@
 
 
           <div class="group bg-white rounded-2xl p-6 text-center shadow-sm py-10
-         hover:bg-[#155469] transition-all duration-300 ease-in-out">
+         hover:bg-[#155469] transition-all ease-in-out-all duration-300 ease-in-out">
 
             <h3 class="text-4xl font-semibold text-gray-900
            group-hover:text-white">
@@ -192,7 +191,7 @@
           </div>
 
           <div class="group bg-white rounded-2xl p-6 text-center shadow-sm py-10
-         hover:bg-[#155469] transition-all duration-300 ease-in-out">
+         hover:bg-[#155469] transition-all ease-in-out-all duration-300 ease-in-out">
 
             <h3 class="text-4xl font-semibold text-gray-900
            group-hover:text-white">
@@ -207,7 +206,7 @@
           </div>
 
           <div class="group bg-white rounded-2xl p-6 text-center shadow-sm py-10
-         hover:bg-[#155469] transition-all duration-300 ease-in-out">
+         hover:bg-[#155469] transition-all ease-in-out-all duration-300 ease-in-out">
 
             <h3 class="text-4xl font-semibold text-gray-900
            group-hover:text-white">
@@ -254,7 +253,7 @@
       </p>
 
       <a routerLink="/contact" (click)="scrollToTop()"
-        class="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition sm:text-base cursor-pointer hover:bg-[#155469] hover:text-white border border-white">
+        class="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition-all duration-300 ease-in-out sm:text-base cursor-pointer hover:bg-[#155469] hover:text-white border border-white">
         {{ 'START_PROJECT_TODAY' | translate }}
         <span class="text-lg"><svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" stroke-width="2"
             viewBox="0 0 24 24">
@@ -301,7 +300,7 @@
 
   <div class="text-center">
     <a routerLink="/services" (click)="scrollToTop()"
-      class="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition sm:text-base cursor-pointer bg-[#155469] text-white mx-auto">
+      class="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium hover:bg-white border border-[#155469] hover:text-[#155469] transition-all duration-300 ease-in-out sm:text-base cursor-pointer bg-[#155469] text-white mx-auto">
       {{ 'VIEW_ALL_PROJECTS' | translate }}
       <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
@@ -341,15 +340,13 @@
       <!-- Navigation -->
       <div class="flex items-center gap-3 md:self-end">
         <button (click)="prev()"
-          class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-600 shadow transition hover:bg-[#155469] hover:text-white cursor-pointer">
+          class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-600 shadow hover:bg-[#155469] hover:text-white cursor-pointer transition-all duration-300 ease-in-out">
           <svg class="w-4 h-4 ltr:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
           </svg>
         </button>
         <button (click)="next()"
-          class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-600 shadow transition hover:bg-[#155469] hover:text-white cursor-pointer">
-
-
+          class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-600 shadow hover:bg-[#155469] hover:text-white cursor-pointer transition-all duration-300 ease-in-out">
           <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
           </svg>
