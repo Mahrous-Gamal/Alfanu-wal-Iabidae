@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-// import { TranslateServiceService } from './shared/services/translate-service.service';
 import { TranslateServiceService } from './../../shared/services/translate-service.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';

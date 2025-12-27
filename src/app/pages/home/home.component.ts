@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-// import { TranslateServiceService } from './shared/services/translate-service.service';
-import { TranslateServiceService } from './../../shared/services/translate-service.service';
 import { TranslateModule } from '@ngx-translate/core';
 // Define the Project type
 interface Project {
@@ -26,18 +24,6 @@ interface Testimonial {
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  selectedLang = 'en';
-
-  constructor(readonly translaservice: TranslateServiceService) {
-    this.selectedLang = this.translaservice.getCurrentLanguage();
-  }
-
-  switchLanguage(lang: string) {
-    console.log(lang);
-    this.selectedLang = lang;
-    this.translaservice.useLanguage(lang);
-  }
-
   showScrollButton = false;
 
   @HostListener('window:scroll', [])
@@ -85,21 +71,20 @@ export class HomeComponent {
     },
   ];
 
- testimonials: Testimonial[] = [
-  {
-    image: 'assets/images/ceo.png',
-    text: 'TESTIMONIAL_TEXT',
-    name: 'Name_CEO',
-    title: 'CEO_TITLE',
-  },
-  {
-    image: 'assets/images/manger.jpeg',
-    text: 'TESTIMONIAL_TEXT',
-    name: 'Name_PROJECT_MANAGER',
-    title: 'PROJECT_MANAGER_TITLE',
-  },
-];
-
+  testimonials: Testimonial[] = [
+    {
+      image: 'assets/images/ceo.png',
+      text: 'TESTIMONIAL_TEXT',
+      name: 'Name_CEO',
+      title: 'CEO_TITLE',
+    },
+    {
+      image: 'assets/images/manger.jpeg',
+      text: 'TESTIMONIAL_TEXT',
+      name: 'Name_PROJECT_MANAGER',
+      title: 'PROJECT_MANAGER_TITLE',
+    },
+  ];
 
   currentIndex = signal(0);
 

@@ -6,13 +6,30 @@ import { HeaderComponent } from "./layouts/header/header.component";
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from "./layouts/footer/footer.component";
 
+
+import { AfterViewInit, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
+import AOS from 'aos';
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, TranslateModule, HeaderComponent, CommonModule, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
+private platformId = inject(PLATFORM_ID);
+
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    }
+  }
+
   selectedLang = 'en';
 
   constructor(readonly translaservice: TranslateServiceService) {

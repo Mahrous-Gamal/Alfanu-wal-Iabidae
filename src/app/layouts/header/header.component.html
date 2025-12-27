@@ -1,26 +1,26 @@
-<header class="header fixed w-full left-0 right-0 top-0 z-9999999 bg-white shadow ">
+<header class="header fixed w-full left-0 right-0 top-0 z-9999999 bg-white shadow px-5">
   <div class="flex justify-between items-center">
     <!-- Logo -->
-    <div class="image w-35 mt-2 md:w-45 cursor-pointer " routerLink="/">
-      <img class="w-20" src="./assets/images/logo.svg" alt="logo">
-    </div>
 
-    <!-- Desktop Menu -->
-    <ul class=" p-5 rounded-full hidden lg:flex justify-between items-center gap-4">
-      @for (section of sections; track $index) {
-      <li class="text-[#5D5A88] cursor-pointer relative group hover:text-[#155469]">
-        <a [routerLink]="section.url" [routerLinkActiveOptions]="{ exact: true }"
-          routerLinkActive="active text-[#155469] text-bold" class="text-[16px] leading-4 font-medium"
-          >
-          {{ section.label | translate }}
+    <div class="flex">
+      <div class="image mt-2  cursor-pointe " routerLink="/">
+        <img class="w-20" src="./assets/images/logo.svg" alt="logo">
+      </div>
+      <!-- Desktop Menu -->
+      <ul class=" p-5 rounded-full hidden lg:flex justify-between items-center gap-4">
+        @for (section of sections; track $index) {
+        <li class="text-[#5D5A88] cursor-pointer relative group hover:text-[#155469]">
+          <a [routerLink]="section.url" [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active text-[#155469] text-bold" (click)="scrollToTop()" class="text-[16px] leading-4 font-medium">
+            {{ section.label | translate }}
 
-        </a>
+          </a>
 
-        <!-- @if(section.dropdown){
+          <!-- @if(section.dropdown){
         <i class="fas fa-chevron-down"></i>
         } -->
 
-        <!-- Dropdown Desktop
+          <!-- Dropdown Desktop
         @if(section.dropdown){
         <ul
           class="absolute left-0 top-full w-fit bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-300 z-50">
@@ -34,9 +34,39 @@
         </ul>
         } -->
 
-      </li>
+        </li>
+        }
+
+      </ul>
+
+    </div>
+    <div class="flex gap-8 items-center">
+            <!-- Language -->
+    <div class="relative" (click)="toggleLanguageDropdown()" tabindex="0">
+      <!-- <i class="fas fa-globe text-gray-600 hover:text-blue-600 cursor-pointer text-xl"></i> -->
+      <i
+        class="fas fa-language text-gray-400  hover:text-gray-500 dark:hover:text-[#cfccff]  cursor-pointer text-sm"></i>
+
+      @if(langOpen){
+      <div
+        class="absolute right-0 mt-2 w-28 bg-white dark:bg-black border border-gray-200 dark:border-none rounded shadow z-50">
+        <button
+          class="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white text-sm cursor-pointer"
+          (click)="switchLang('en')">
+          <span class="fi fi-us w-5 h-5"></span> English
+        </button>
+
+        <button
+          class="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white text-sm cursor-pointer"
+          (click)="switchLang('ar')">
+          <span class="fi fi-sa w-5 h-5"></span> العربية
+        </button>
+      </div>
       }
-      <li class="text-[#5D5A88] cursor-pointer relative group">
+
+
+    </div>
+      <div class="text-[#5D5A88] cursor-pointer relative group">
 
         <a routerLink="/contact" (click)="scrollToTop()" class="inline-flex items-center gap-2
              font-medium
@@ -47,8 +77,12 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
           </svg>
         </a>
-      </li>
-    </ul>
+      </div>
+
+
+    </div>
+
+
 
     <!-- Bars Icon (Mobile) -->
     <a class="bars text-[30px] font-bold block lg:hidden " (click)="toggleMenu()">
@@ -71,8 +105,7 @@
     <ul class="flex flex-col gap-6 p-6">
       @for (section of sections; track $index) {
       <li class="text-[#5D5A88] cursor-pointer">
-        <div class="flex justify-between items-center hover:text-[#155469]"
-          >
+        <div class="flex justify-between items-center hover:text-[#155469]">
           <a [routerLink]="section.url" routerLinkActive="active text-[#155469] text-bold"
             class="text-[16px] lg:text-[18px] font-bold">
             {{ section.label | translate }}

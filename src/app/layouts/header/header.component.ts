@@ -3,6 +3,7 @@ import { Component, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateServiceService } from './../../shared/services/translate-service.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { log } from 'node:console';
 
 @Component({
   selector: 'app-header',
@@ -13,11 +14,11 @@ import { TranslateModule } from '@ngx-translate/core';
 export class HeaderComponent {
   menuOpen = false;
   activeSection = 'home';
-
-  // Translation
+  langOpen: boolean = false;
+  userOpen: boolean = false;
   currentLang: string = 'en';
   flag: boolean = false;
-  constructor() {}
+  constructor(public translation: TranslateServiceService) {}
 
   sections = [
     { url: '/home', label: 'NAV_HOME' },
@@ -60,5 +61,18 @@ export class HeaderComponent {
 
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  switchLang(lang: string) {
+    this.langOpen = false;
+    this.translation.useLanguage(lang);
+    this.currentLang = lang;
+    console.log(this.langOpen);
+  }
+
+  // Dropdown Toggles
+  toggleLanguageDropdown() {
+    this.langOpen = !this.langOpen;
+    this.userOpen = false;
   }
 }

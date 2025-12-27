@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-// import { TranslateServiceService } from './shared/services/translate-service.service';
 import { TranslateServiceService } from './../../shared/services/translate-service.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
@@ -12,17 +11,6 @@ imports: [TranslateModule, CommonModule],
   styleUrl: './contact.component.css',
 })
 export class ContactComponent {
-  selectedLang = 'en';
-
-  constructor(readonly translaservice: TranslateServiceService) {
-    this.selectedLang = this.translaservice.getCurrentLanguage();
-  }
-
-  switchLanguage(lang: string) {
-    console.log(lang);
-    this.selectedLang = lang;
-    this.translaservice.useLanguage(lang);
-  }
 
   showScrollButton = false;
   scrollToTop() {
